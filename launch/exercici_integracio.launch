@@ -1,0 +1,25 @@
+<launch>
+
+<!-- Es carrega el oaremetre year al namespace masteruvic -->
+
+<rosparam file="$(find exercici_integracio)/param/param.yaml" command="load" ns="masteruvic" />
+
+<!-- S'afegeix node rviz -->
+
+<arg name="rviz"  default="true" />
+
+<group if="$(arg rviz)">
+  <node
+    pkg="rviz"
+    type="rviz"
+    name="model_rviz">
+  </node>
+</group>
+
+
+<!-- Afegim del paquet usb_cam el fitxer: usb_cam-test.launh. Els arguments d'aquest fitxer .launch són: video_device, image_width, image_height, pixel_format, camera_frame_id, io_method -->
+
+  <include file="$(find usb_cam)/launch/usb_cam-test.launch">
+  </include>
+
+</launch>
