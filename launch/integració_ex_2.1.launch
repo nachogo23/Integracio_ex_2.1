@@ -1,6 +1,6 @@
 <launch>
 
-<!-- Es carrega el oaremetre year al namespace masteruvic -->
+<!-- Es carrega el paremetre year al namespace masteruvic -->
 
 <rosparam file="$(find exercici_integracio)/param/param.yaml" command="load" ns="masteruvic" />
 
